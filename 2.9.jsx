@@ -49,7 +49,7 @@ const App = () => {
     }
     persons.forEach(filterLetters)
     function filterLetters(item) {
-      if (item.name.includes(event.target.value)) {
+      if (item.name.includes(event.target.value.toUpperCase()) || item.name.includes(event.target.value.toLowerCase())) {
         copy.push(item)
         setPersons(copy)
       }
