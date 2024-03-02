@@ -24,6 +24,15 @@ const Filter = (props) => {
 
 
 }
+const Persons = (props) => {
+  return (
+  <ul>
+    {props.persons.map(person => 
+      <li key={person.id}>{person.name} {person.number}</li>  
+    )}
+  </ul>
+  )
+}
 
 const PersonForm = (props) => {
   const addPerson = (event) => {
@@ -90,11 +99,7 @@ const App = (props) => {
       <h2>Add a New</h2>
       <PersonForm people={people} persons={persons} newName={newName} newNumber={newNumber} setPersons={setPersons}setNewName={setNewName} setNewNumber={setNewNumber}/>
       <h2>Numbers</h2>
-      <ul>
-        {persons.map(person => 
-          <li key={person.id}>{person.name} {person.number}</li>  
-        )}
-      </ul>
+      <Persons persons={persons}/>
     </div>
   )
 }
