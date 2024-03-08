@@ -77,13 +77,13 @@ const PersonForm = (props) => {
             props.people.push(person)
             props.setNewName('')
             props.setNewNumber('')
-        } else {
-            props.setPersons(props.people.concat(person))
-            props.people.push(person)
-            props.setNewName('')
-            props.setNewNumber('')
         }
 
+    } else {
+        props.setPersons(props.people.concat(person))
+        props.people.push(person)
+        props.setNewName('')
+        props.setNewNumber('')
     }
     }
 
